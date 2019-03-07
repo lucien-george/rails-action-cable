@@ -1,0 +1,4 @@
+<div class="message <%= user_is_messages_author ? "right" : "" %>">
+    <p><%= message.user.email %>: </p>
+  <div class="message-content"><%= message.content %></div>
+</div>

@@ -1,0 +1,10 @@
+<% if @message.errors.any? %>
+<% else %>
+  messageContainer = document.querySelector('.messages');
+  messageContainer.insertAdjacentHTML('beforeend', '<%= j render "message", message: @message, user_is_messages_author: true %>');
+  input = document.querySelector('#message_content');
+  input.value = '';
+  messages = document.querySelectorAll('.message');
+  lastMessage = messages[messages.length - 1];
+  lastMessage.scrollIntoView();
+<% end %>
